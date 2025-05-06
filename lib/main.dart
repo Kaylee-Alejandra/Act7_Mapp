@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:act_7_mapp/pantalla_uno.dart';
+import 'package:act_7_mapp/pantalla_dos.dart';
+import 'package:act_7_mapp/pantalla_tres.dart';
+import 'package:act_7_mapp/pantalla_cuatro.dart';
+import 'package:act_7_mapp/pantalla_cinco.dart';
+import 'package:act_7_mapp/pantalla_seis.dart';
+import 'package:act_7_mapp/pantalla_siete.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,36 +15,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Entre Paginas Routes',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const FirstScreen(),
+        '/segunda': (context) => const PantallaDos(),
+        '/tercera': (context) => const PantallaTres(),
+        '/cuarta': (context) => const PantallaCuatro(),
+        '/quinta': (context) => const PantallaCinco(),
+        '/sexta': (context) => const PantallaSeis(),
+        '/septima': (context) => const PantallaSiete(),
+      },
     );
   }
 }
